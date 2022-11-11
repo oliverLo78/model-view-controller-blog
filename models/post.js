@@ -5,13 +5,13 @@ class Post extends Model {}
 
 Post.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true,
+    // },
+    post_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -24,10 +24,10 @@ Post.init(
       defaultValue: DataTypes.NOW,
     },
     
-    user_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'post',
         key: 'id',
       },
     },
@@ -37,8 +37,8 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'post',
   }
 );
 
-module.exports = Project;
+module.exports = Post;

@@ -4,11 +4,13 @@ const withAuth = require('../../utils/auth');
 
 const comments = [
   {
+    id: 1,
     comment_title: 'Why MVC is so important',
     description: 
       'MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the view layer for design'
   },
   {
+    id: 2,
     comment_title: 'Authenticatioon vs. Authorization',
     description: 
       'There is a difference between authentication and authorization. Authentication menas confirming your own identity'
