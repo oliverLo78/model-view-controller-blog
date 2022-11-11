@@ -2,6 +2,19 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+const comments = [
+  {
+    comment_title: 'Why MVC is so important',
+    description: 
+      'MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the view layer for design'
+  },
+  {
+    comment_title: 'Authenticatioon vs. Authorization',
+    description: 
+      'There is a difference between authentication and authorization. Authentication menas confirming your own identity'
+  },
+];
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -15,6 +28,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Get a single post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({

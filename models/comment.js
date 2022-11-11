@@ -1,3 +1,5 @@
+// Here is where we set up our comment model, for when we are ready to connect to a
+// database in future activities 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -5,12 +7,12 @@ class Comment extends Model {}
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   primaryKey: true,
+    //   autoIncrement: true,
+    // },
     comment_description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,7 +32,7 @@ Comment.init(
     comment_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'post',
+          model: 'comment',
           key: 'id',
         },
       },
