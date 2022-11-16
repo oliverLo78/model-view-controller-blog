@@ -1,10 +1,14 @@
 const User = require('./User');
-const Comment = require('./comment');
+const Comment = require('./Comment');
 const Post = require('./Post');
+const { post } = require('../controllers');
 
-User.hasOne(Post, {
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+});
+
+Comment.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
 });
 
 Post.belongsTo(User, {
@@ -13,15 +17,15 @@ Post.belongsTo(User, {
 
 // Define a User as having many Comments, thus creating a foreign key in the 
 // 'post' table
-User.hasMany(Comment, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+// User.hasMany(Comment, {
+//   foreignKey: 'user_id',
+//   onDelete: 'CASCADE',
+// });
 
-Comment.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+// Comment.belongsTo(User, {
+//   foreignKey: 'user_id',
+//   onDelete: 'CASCADE',
+// });
 
 
 
