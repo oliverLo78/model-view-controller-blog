@@ -15,7 +15,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const { id } of comments) {
+  for (const { id } of Comment) {
     const newComment = await Comment.create({
       comment_id: id,
     });
@@ -23,7 +23,7 @@ const seedDatabase = async () => {
 
   for (const post of postSeedData) {
     const newPost = await Post.create({
-      ...comment,
+      ...post,
       // Attach a random reader ID to each comment
       comment_id: readers[Math.floor(Math.random() * readers.length)].id,
     });

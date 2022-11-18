@@ -1,4 +1,4 @@
-{{#each posts as |post|}}
+{{!-- {{#each posts as |post|}}
 
 <h1>Dashboard</h1>
 
@@ -15,19 +15,26 @@
     </div>
 </div> 
 
-{{/each}}
+{{/each}} --}}
 
+{{#each posts as |post|}}
+<header class="new-post">Create New Post</header>
+<form class="form signup-form" id="dashboard-form">
 <div class="form-group">
     <label for="exampleFormControlSelect1">Title</label>
+    <!-- Render the title of one comment using a handlebars.js expression -->
+    <h2><a href="/post/{{post.id}}">{{post.post_title}}</a></h2>
+    <p>Created by {{post.user.name}}</p>
     <input class="form-control" id="title-dashboard">
-    
 </div>
 <div class="form-group">
     <label for="exampleFormControlSelect2">Content</label>
     <input class="form-control" id="content-dashboard">
-    <button type="button" id="dashboard-form" class="btn btn-secondary btn-lg btn-block">Login!</button>
-    <a href="/signup">Sign up instead!</a>
-    
+     <p>{{post.description}}</p>
+    <button type="button" id="dashboard-form" class="btn btn-secondary btn-lg btn-block">Create!</button>
+    <a href="/signup">Sign up instead</a>
 </div>
+</form>
+{{/each}}
 
-  <script src="/public/js/dashboard.js"></script>
+  <script src="./js/dashboard.js"></script>

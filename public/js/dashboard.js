@@ -6,7 +6,7 @@ const dashboardHandler = async (event) => {
    
   
     if (title && content) {
-      const response = await fetch('/api/dashboard', {
+      const response = await fetch('/api/users/dashboard', {
         method: 'POST',
         body: JSON.stringify({ title, content }),
         headers: { 'Content-Type': 'application/json' },
