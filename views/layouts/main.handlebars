@@ -12,26 +12,30 @@
 </head>
 
 <body>
-  <header>
-    <h1>Welcome to the Tech Blog</h1>
-  </header>
-  <nav>
+  
+    <nav>
     <a href="/">Home</a>
     <!-- Expressions get two handlebars -->
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/signup">Signup</a>
     {{/if}}
   </nav>
-  <main>
+  <header>
+    <h1>The Tech Blog</h1>
+  </header>
+
+  <main class="container container-fluid mt-5">
    
-    <div class="gallery">
+    <div class="flex-column justify-space-around">
        <!--  Renders HTML gets three handlebars -->
       {{{body}}}
     </div>
   </main>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
@@ -39,4 +43,4 @@
 </html>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="./scripts/login.js"></script>
+<script src="/js/login.js"></script>

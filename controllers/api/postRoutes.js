@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 const comments = [
@@ -16,6 +16,15 @@ const comments = [
       'There is a difference between authentication and authorization. Authentication menas confirming your own identity'
   },
 ];
+
+// Get all Comments
+router.get('/', async (req, res) => {
+  res.render('homepage');
+});
+
+router.get('/post/:id', async (req, res) => {
+  return res.render('title-details', comments[req.params.num]);
+});
 
 router.post('/', withAuth, async (req, res) => {
   try {
