@@ -1,14 +1,14 @@
 const dashboardHandler = async (event) => {
     event.preventDefault();
   
-    const title = document.querySelector('#title-dashboard').value.trim();
-    const content = document.querySelector('#content-dashboard').value.trim();
+    const title_dashboard = document.querySelector('#title_dashboard').value.trim();
+    const content_dashboard = document.querySelector('#content_dashboard').value.trim();
    
   
-    if (title && content) {
+    if (title_dashboard && content_dashboard) {
       await fetch('/api/dashboard', {
         method: 'POST',
-        body: JSON.stringify({ title, content }),
+        body: JSON.stringify({ title_dashboard, content_dashboard }),
         headers: { 'Content-Type': 'application/json' }
       });
 
@@ -18,5 +18,5 @@ const dashboardHandler = async (event) => {
 
   document
     .querySelector('#dashboard-form')
-    .addEventListener('click', dashboardHandler);
+    .addEventListener('submit', dashboardHandler);
   

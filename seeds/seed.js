@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 
-const userSeedData = require('./userSeedData.json');
+// const userSeedData = require('./userSeedData.json');
 const postSeedData = require('./postSeedData.json');
 
 // Awaiting the tables to sync

@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
       include: [{ model: User }]
       
     });
-    
+
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
   
