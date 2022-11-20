@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all post and JOIN with user data
     const postData = await Post.findAll({
@@ -11,7 +11,9 @@ router.get('/', async (req, res) => {
         // Find all the post made by the user
         // whatever user is logged in we are going to match w/ id in db
         id: req.session.user_id
-      }
+      },
+      include: [{ model: User }]
+      
     });
     
     // Serialize data so the template can read it

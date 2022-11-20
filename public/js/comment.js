@@ -1,8 +1,8 @@
 const commentFormHandler = async function(event) {
     event.preventDefault();
   
-    const postId = document.querySelector('input[name="post-id"]').value;
-    const body = document.querySelector('textarea[name="comment-body"]').value;
+    const postId = document.querySelector('#comment-id"]').innerHTML;
+    const body = document.querySelector('#description-body').value;
     // send a fetch request to add a new comment 
     if (body) {
       await fetch('/api/comment', {

@@ -2,31 +2,16 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-const comments = [
-  {
-    id: 1,
-    comment_title: 'Why MVC is so important',
-    description: 
-      'MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the view layer for design'
-  },
-  {
-    id: 2,
-    comment_title: 'Authenticatioon vs. Authorization',
-    description: 
-      'There is a difference between authentication and authorization. Authentication menas confirming your own identity'
-  },
-];
+// // Get all Comments
+// router.get('/', async (req, res) => {
+//   res.render('homepage');
+// });
 
-// Get all Comments
-router.get('/', async (req, res) => {
-  res.render('homepage');
-});
+// router.get('/post/:id', async (req, res) => {
+//   return res.render('title-details', comments[req.params.num]);
+// });
 
-router.get('/post/:id', async (req, res) => {
-  return res.render('title-details', comments[req.params.num]);
-});
-
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -40,24 +25,24 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Get a single post
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const postData = await Post.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+// router.delete('/:id', withAuth, async (req, res) => {
+//   try {
+//     const postData = await Post.destroy({
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
 
-    if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
-      return;
-    }
+//     if (!postData) {
+//       res.status(404).json({ message: 'No post found with this id!' });
+//       return;
+//     }
 
-    res.status(200).json(postData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(postData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
