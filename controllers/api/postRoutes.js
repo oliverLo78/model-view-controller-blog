@@ -10,7 +10,7 @@ const withAuth = require('../../utils/auth');
 // router.get('/post/:id', async (req, res) => {
 //   return res.render('title-details', comments[req.params.num]);
 // });
-
+// 
 router.post('/', async (req, res) => {
   try {
     const newPost = await Post.create({
