@@ -36,6 +36,8 @@ While building this project I learned to:
 
 ## Installation
 
+https://agile-beach-74628.herokuapp.com/
+
 You may also now click on in the navbar to see all posts you have made and to create new posts yourself.
 
 If it is your first visit then simply create a new user by adding your information to
