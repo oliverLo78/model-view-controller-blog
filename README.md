@@ -36,11 +36,6 @@ While building this project I learned to:
 
 ## Installation
 
-
-
-
-
-
 You may also now click on in the navbar to see all posts you have made and to create new posts yourself.
 
 If it is your first visit then simply create a new user by adding your information to
@@ -62,7 +57,14 @@ After your logged you can make a post, see all comments or create a comment of y
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+![screenShot tech_blog](https://user-images.githubusercontent.com/109435666/211608153-ce133c5d-b045-4c7a-9398-9401182d0749.png)
+
+![tech_blog2](https://user-images.githubusercontent.com/109435666/211608203-c50c1173-0815-49ed-bec5-7a4cc1b9eb78.png)
+
+![tech_blog3](https://user-images.githubusercontent.com/109435666/211608249-dd856ed7-5ba4-44ea-a2f7-124bdc1270bc.png)
+
 ## User Story
+
 
 AS A developer who writes about tech
 I WANT a CMS-style blog site
