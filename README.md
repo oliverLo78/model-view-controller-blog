@@ -67,13 +67,15 @@ After your logged you can make a post, see all comments or create a comment of y
 
 ## User Story
 
-
+```
 AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
+```
 
 ## Acceptance Criteria
 
+```
 GIVEN a CMS-style blog site
 
 WHEN I visit the site for the first time
@@ -140,9 +142,11 @@ WHEN I am idle on the site for more than a set time
 
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
+
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -163,5 +167,5 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 For any further questions feel free to contact me via:
 - GitHub: [GitHub oliverLo78](https://github.com/oliverLo78)
 - Email: [oliverberto@gmail.com](mailto:oliverberto@gmail.com)
-- LinkedIn: [Name on LinkedIn](https://www.linkedin.com/in/oliver-lopez78/)
+- LinkedIn: [Oliver Lopez](https://www.linkedin.com/in/oliver-lopez78/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
